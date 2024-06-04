@@ -10,4 +10,6 @@
 
 运行启动 `pip install -r requirements.txt`
 
-
+## 期末项目后端代码说明
+food-service 和 user-service 下缺乏 `/application-dev.yaml` （涉及到密码）
+获取群里的后放到相应的 `resources` 文件夹下 即可

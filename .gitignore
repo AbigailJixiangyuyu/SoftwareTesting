@@ -1,5 +1,45 @@
-平时作业/代码/backend/venv
+**/venv
 
-平时作业/代码/backend/.idea
+**/.idea
 
-平时作业/代码/backend/service/__pycache__
+**/__pycache__
+
+
+**/target/
+期末项目/backend/softwaretesting/!.mvn/wrapper/maven-wrapper.jar
+期末项目/backend/softwaretesting/!**/src/main/**/target/
+期末项目/backend/softwaretesting/!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+期末项目/backend/softwaretesting/.apt_generated
+期末项目/backend/softwaretesting/.classpath
+期末项目/backend/softwaretesting/.factorypath
+期末项目/backend/softwaretesting/.project
+期末项目/backend/softwaretesting/.settings
+期末项目/backend/softwaretesting/.springBeans
+期末项目/backend/softwaretesting/.sts4-cache
+
+### NetBeans ###
+期末项目/backend/softwaretesting/nbproject/private/
+期末项目/backend/softwaretesting/nbbuild/
+期末项目/backend/softwaretesting/dist/
+期末项目/backend/softwaretesting/nbdist/
+期末项目/backend/softwaretesting/.nb-gradle/
+期末项目/backend/softwaretesting/build/
+期末项目/backend/softwaretesting/!**/src/main/**/build/
+期末项目/backend/softwaretesting/!**/src/test/**/build/
+
+### VS Code ###
+期末项目/backend/softwaretesting/.vscode/
+
+### Mac OS ###
+期末项目/backend/softwaretesting/.DS_Store
+
+期末项目/backend/softwaretesting/说明.md
+
+**/application-dev.yaml

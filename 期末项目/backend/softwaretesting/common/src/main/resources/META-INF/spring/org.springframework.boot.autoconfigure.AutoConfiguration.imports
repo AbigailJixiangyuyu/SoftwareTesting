@@ -1,0 +1,14 @@
+
+
+#com.tongji.common.interceptor.TokenInterceptor
+com.tongji.common.interceptor.AuthorInterceptor
+com.tongji.common.config.WebMvcConfiguration
+
+com.tongji.common.properties.SmsProperties
+com.tongji.common.utils.SmsUtil
+
+com.tongji.common.service.Impl.CacheService
+
+com.tongji.common.config.MybatisConfig
+
+com.tongji.common.service.Impl.MinIOFileStorageService
