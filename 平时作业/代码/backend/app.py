@@ -14,7 +14,7 @@ app = Flask(__name__)
 @cross_origin()
 def charge():
     test_file = request.files['file']
-    file_path = os.getcwd() + '/' + test_file.filename
+    file_path = os.getcwd() + '/result/' + test_file.filename
     test_file.save(file_path)
     # 使用pandas库读取excel表格中的测试数据
     df = pd.read_excel(test_file.filename)
