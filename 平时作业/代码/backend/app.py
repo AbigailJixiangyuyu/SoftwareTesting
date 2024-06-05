@@ -9,6 +9,7 @@ from service.charge import TelecomCharge
 
 app = Flask(__name__)
 
+
 # 用来测试电信收费问题的api
 @app.route('/test/charge', methods=['POST', 'GET'])
 @cross_origin()
@@ -36,5 +37,10 @@ def charge():
     return response
 
 
+@app.route('/ping')
+def ping_pong():
+    return 'pong'
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(port=25691)
