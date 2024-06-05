@@ -2,6 +2,8 @@
 
 总文件夹在` 平时作业/代码/backend/`
 
+注意 app.py 中 api 的写法格式
+
 其中 功能放在 `service` 下
 
 测试的 excel 放在 `test` 下
