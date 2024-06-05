@@ -14,7 +14,11 @@ app = Flask(__name__)
 
 # 两个公共处理函数
 def dealFile(file):
-    file_path = os.getcwd() + '/result/' + str(uuid.uuid4()) + '.xlsx'
+    file_path = os.getcwd() + '/result'
+    if not os.path.exists(file_path):
+        # 如果目录不存在，则创建目录
+        os.makedirs(file_path)
+    file_path += '/' + str(uuid.uuid4()) + '.xlsx'
     file.save(file_path)
     # 使用pandas库读取excel表格中的测试数据
     return pd.read_excel(file_path), file_path
