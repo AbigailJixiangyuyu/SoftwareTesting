@@ -8,6 +8,7 @@ import json
 import uuid
 from service.charge import TelecomCharge
 from service.sale_system import SaleSystem
+from service.computer_sales_system import ComputerSalesSystem
 
 app = Flask(__name__)
 
@@ -68,6 +69,23 @@ def sale_system():
             result = "未通过测试"
         else:
             result = "通过测试"
+        df.loc[i, 'result'] = result
+    return dealResponse(df, file_path)
+
+
+# 处理电脑销售系统的api
+@app.route('/test/commission', methods=['POST', 'GET'])
+@cross_origin()
+def commission():
+    df, file_path = dealFile(request.files['file'])
+    for i in range(df.shape[0]):
+        computer_sales_system = ComputerSalesSystem(df.loc[i, 'mainframes'], df.loc[i, 'monitors'], df.loc[i, 'peripherals'])
+        real = computer_sales_system.compute_commission()
+        df.loc[i, 'real'] = real
+        if df.loc[i, 'real'] == df.loc[i, 'expect']:
+            result = "通过测试"
+        else:
+            result = "未通过测试"
         df.loc[i, 'result'] = result
     return dealResponse(df, file_path)
 
