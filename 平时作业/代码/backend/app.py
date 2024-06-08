@@ -9,13 +9,19 @@ import uuid
 from service.charge import TelecomCharge
 from service.sale_system import SaleSystem
 from service.computer_sales_system import ComputerSalesSystem
+import platform
+
+
 
 app = Flask(__name__)
 
 
 # 两个公共处理函数
 def dealFile(file):
-    file_path = os.getcwd() + '/result'
+    if platform.system().lower() == 'linux':
+        file_path = "/www/wwwroot/python/software-normal/result"
+    else:
+        file_path = os.getcwd() + '/result'
     if not os.path.exists(file_path):
         # 如果目录不存在，则创建目录
         os.makedirs(file_path)
@@ -30,6 +36,7 @@ def dealResponse(df, file_path):
     DataFrame(df).to_excel(file_path, sheet_name='Sheet1', index=False, header=True)
     # 将结果以json形式返回给前端
     dic = df.to_dict(orient='records')
+    file_path = 'http://47.116.193.81:25690/static/' + os.path.basename(file_path)
     my_dict = {'file': file_path, 'result': dic}
     result = json.dumps(my_dict)
     response = make_response(result)
