@@ -28,7 +28,7 @@ public class GlucoseServiceImpl extends ServiceImpl<GlucoseMapper, Glucose> impl
 
     @Override
     public ResponseResult getGlucose(TimeRangeDTO timeRangeDTO) {
-        if (timeRangeDTO.getStartTime() == null || timeRangeDTO.getEndTime() == null) {
+        if (timeRangeDTO == null || timeRangeDTO.getStartTime() == null || timeRangeDTO.getEndTime() == null) {
             return ResponseResult.errorResult(400, "时间范围不能为空");
         }
         Long id = StpUtil.getLoginIdAsLong();

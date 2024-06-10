@@ -109,6 +109,16 @@ public class ResponseResult<T> implements Serializable {
         this.data = data;
     }
 
+    public String getMessage(){
+        return this.msg;
+    }
 
+    public T getData(){
+        return this.data;
+    }
+
+    public  Integer getCode(){
+        return this.code;
+    }
 
 }
