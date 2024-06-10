@@ -24,12 +24,12 @@ class CookbookServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        log.info("开始测试");
+        log.info("开始食谱模块测试");
     }
 
     @AfterEach
     void tearDown() {
-        log.info("测试结束");
+        log.info("食谱模块测试结束");
     }
 
     @Test
