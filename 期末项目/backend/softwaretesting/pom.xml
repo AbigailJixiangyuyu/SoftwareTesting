@@ -57,12 +57,33 @@
         <com.alibaba.cloud>2022.0.0.0</com.alibaba.cloud>
 
         <httpclient.version>4.5.13</httpclient.version>
+        <!-- 解决allure测试报告中文乱码问题 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aspectj.version>1.8.10</aspectj.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>2.13.6</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
@@ -257,5 +278,36 @@
 <!--            </plugin>-->
 <!--        </plugins>-->
 <!--    </build>-->
-
+    <build>
+        <plugins>
+            <!-- 该插件能够在运行后自动在target目录生成allure测试结果目录 -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <!-- 默认测试文件的命名规则：
+                            "**/Test*.java"
+                            "**/*Test.java"
+                            "**/*Tests.java"
+                            "**/*TestCase.java"
+                            如果现有测试文件不符合以上命名，可以在 pom.xml 添加自定义规则
+                        -->
+                        <include>**/**.java</include>
+                    </includes>
+                    <!-- 在target目录下自动生成原生的测试结果目录：/allure-results -->
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}/allure-results</value>
+                        </property>
+                        <property>
+                            <name>allure.link.issue.pattern</name>
+                            <value>https://example.org/issue/{}</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

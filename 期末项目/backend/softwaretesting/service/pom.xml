@@ -22,7 +22,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
-
         <dependency>
             <groupId>com.tongji</groupId>
             <artifactId>model</artifactId>
@@ -140,6 +139,34 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <!-- 该插件能够在运行后自动在target目录生成allure测试结果目录 -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <!-- 默认测试文件的命名规则：
+                            "**/Test*.java"
+                            "**/*Test.java"
+                            "**/*Tests.java"
+                            "**/*TestCase.java"
+                            如果现有测试文件不符合以上命名，可以在 pom.xml 添加自定义规则
+                        -->
+                        <include>**/**.java</include>
+                    </includes>
+                    <!-- 在target目录下自动生成原生的测试结果目录：/allure-results -->
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}/allure-results</value>
+                        </property>
+                        <property>
+                            <name>allure.link.issue.pattern</name>
+                            <value>https://example.org/issue/{}</value>
+                        </property>
+                    </systemProperties>
                 </configuration>
             </plugin>
         </plugins>
