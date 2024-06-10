@@ -1,0 +1,199 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "com.tongji.service.service.impl",
+    "children" : [ {
+      "name" : "GlucoseServiceImplTest",
+      "children" : [ {
+        "name" : "addGlucose1",
+        "uid" : "8bc6a53bc7d90337",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021940252,
+          "stop" : 1718021940997,
+          "duration" : 745
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "addGlucose2",
+        "uid" : "6c7bb08b9d14e639",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941016,
+          "stop" : 1718021941440,
+          "duration" : 424
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "updateGlucose1",
+        "uid" : "c3c18d1f76704888",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941444,
+          "stop" : 1718021941482,
+          "duration" : 38
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "updateGlucose2",
+        "uid" : "8460e5cff1fe08b3",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941486,
+          "stop" : 1718021941556,
+          "duration" : 70
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "updateGlucose3",
+        "uid" : "565d5ef73f0b5700",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941561,
+          "stop" : 1718021941632,
+          "duration" : 71
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "updateGlucose4",
+        "uid" : "a418b84c558e4ad6",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941635,
+          "stop" : 1718021941705,
+          "duration" : 70
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getGlucose1",
+        "uid" : "fd02900344ff3a68",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941709,
+          "stop" : 1718021941744,
+          "duration" : 35
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getGlucose2",
+        "uid" : "48f563157d5cd741",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941747,
+          "stop" : 1718021941799,
+          "duration" : 52
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getGlucose3",
+        "uid" : "e6d6ad9f549800a3",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941803,
+          "stop" : 1718021941855,
+          "duration" : 52
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "deleteGlucose1",
+        "uid" : "5dde726a82c8c24c",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941859,
+          "stop" : 1718021941893,
+          "duration" : 34
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "deleteGlucose2",
+        "uid" : "bd82ebdcd57ae029",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941896,
+          "stop" : 1718021941944,
+          "duration" : 48
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "deleteGlucose3",
+        "uid" : "a6848d09fe2ce015",
+        "parentUid" : "573bec3699ff5b6eeba521dd326003d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021941947,
+          "stop" : 1718021942016,
+          "duration" : 69
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "573bec3699ff5b6eeba521dd326003d4"
+    }, {
+      "name" : "CookbookServiceImplTest",
+      "children" : [ {
+        "name" : "testNotExitsGetCookbook",
+        "uid" : "7caacf7a8eec15bb",
+        "parentUid" : "e698f93dcb92f210558150ff0e1f0a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021962781,
+          "stop" : 1718021964602,
+          "duration" : 1821
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testExitsGetCookbook",
+        "uid" : "ebf952b65bfd42af",
+        "parentUid" : "e698f93dcb92f210558150ff0e1f0a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718021964616,
+          "stop" : 1718021964649,
+          "duration" : 33
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e698f93dcb92f210558150ff0e1f0a64"
+    } ],
+    "uid" : "com.tongji.service.service.impl"
+  } ]
+}
