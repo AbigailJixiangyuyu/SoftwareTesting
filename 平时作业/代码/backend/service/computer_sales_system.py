@@ -13,6 +13,8 @@ class ComputerSalesSystem:
             return self._calculate_commission()
         if self.mainframes < 1 or self.monitors < 1 or self.peripherals < 1:
             return -1
+        if self.mainframes > 70 or self.monitors > 80 or self.peripherals > 90:
+            return -1
         gross_sales = (self.mainframes * self.PRICE_MAINFRAME +
                        self.monitors * self.PRICE_MONITOR +
                        self.peripherals * self.PRICE_PERIPHERAL)
