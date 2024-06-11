@@ -12,7 +12,7 @@
         :on-success="handleSuccess"
         :on-remove="handleRemove"
         :file-list="fileList"
-        :limit="1"
+        :limit="10"
         :before-upload="beforeUpload"
         accept=".xlsx, .xls"
         :data="uploadData"
