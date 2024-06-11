@@ -1,0 +1,64 @@
+{
+  "uid" : "2825b2f7727e032f",
+  "name" : "测试输入时间范围内有血糖记录的情况",
+  "fullName" : "com.tongji.service.service.impl.GlucoseServiceImplTest.getGlucose4",
+  "historyId" : "ab43816e2eb6a5b63daddc93d0d40d83",
+  "time" : {
+    "start" : 1718089495878,
+    "stop" : 1718089495943,
+    "duration" : 65
+  },
+  "description" : "返回正确的血糖值列表",
+  "descriptionHtml" : "<p>返回正确的血糖值列表</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "血糖记录模块单元测试"
+  }, {
+    "name" : "story",
+    "value" : "血糖信息查找"
+  }, {
+    "name" : "host",
+    "value" : "Solstice"
+  }, {
+    "name" : "thread",
+    "value" : "72844@Solstice.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "com.tongji.service.service.impl.GlucoseServiceImplTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.tongji.service.service.impl.GlucoseServiceImplTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getGlucose4"
+  }, {
+    "name" : "suite",
+    "value" : "com.tongji.service.service.impl.GlucoseServiceImplTest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2825b2f7727e032f.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,194 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "血糖记录模块单元测试",
+    "children" : [ {
+      "name" : "血糖信息添加",
+      "children" : [ {
+        "name" : "测试输入的gluValue或time为空的情况",
+        "uid" : "66ff1232786c410f",
+        "parentUid" : "b10b83603ad3542be1ee165bbb2d4891",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090035933,
+          "stop" : 1718090036613,
+          "duration" : 680
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入的gluValue和time均不为空的情况",
+        "uid" : "2f85de4c200eb79e",
+        "parentUid" : "b10b83603ad3542be1ee165bbb2d4891",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090036627,
+          "stop" : 1718090037006,
+          "duration" : 379
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b10b83603ad3542be1ee165bbb2d4891"
+    }, {
+      "name" : "血糖信息更新",
+      "children" : [ {
+        "name" : "测试输入的id参数为空的情况",
+        "uid" : "a12f807be2183ad1",
+        "parentUid" : "1af633dc6c1ce4167b2296fa5010a143",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037011,
+          "stop" : 1718090037052,
+          "duration" : 41
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入的id参数无对应的血糖记录的情况",
+        "uid" : "40acf94ab78dc7e7",
+        "parentUid" : "1af633dc6c1ce4167b2296fa5010a143",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037055,
+          "stop" : 1718090037133,
+          "duration" : 78
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入的id参数有对应的血糖记录且gluValue和time中至少一个为空的情况",
+        "uid" : "dea130637307686",
+        "parentUid" : "1af633dc6c1ce4167b2296fa5010a143",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037136,
+          "stop" : 1718090037220,
+          "duration" : 84
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入的id参数有对应的血糖记录且gluValue和time均不为空的情况",
+        "uid" : "ff3ae1445826a26c",
+        "parentUid" : "1af633dc6c1ce4167b2296fa5010a143",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037224,
+          "stop" : 1718090037317,
+          "duration" : 93
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1af633dc6c1ce4167b2296fa5010a143"
+    }, {
+      "name" : "血糖信息查找",
+      "children" : [ {
+        "name" : "测试时间范围为空的情况",
+        "uid" : "932b3d8538f580c5",
+        "parentUid" : "cc8d5387defc66f2660ce571412a6293",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037321,
+          "stop" : 1718090037359,
+          "duration" : 38
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试时间范围不合法的情况",
+        "uid" : "1d3abf3954cecc95",
+        "parentUid" : "cc8d5387defc66f2660ce571412a6293",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037361,
+          "stop" : 1718090037402,
+          "duration" : 41
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入时间范围内无血糖记录的情况",
+        "uid" : "3bcafb44bdf77910",
+        "parentUid" : "cc8d5387defc66f2660ce571412a6293",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037405,
+          "stop" : 1718090037486,
+          "duration" : 81
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入时间范围内有血糖记录的情况",
+        "uid" : "e1796529da5b49f4",
+        "parentUid" : "cc8d5387defc66f2660ce571412a6293",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037489,
+          "stop" : 1718090037550,
+          "duration" : 61
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "cc8d5387defc66f2660ce571412a6293"
+    }, {
+      "name" : "血糖信息删除",
+      "children" : [ {
+        "name" : "测试输入的id参数为空的情况",
+        "uid" : "4d8452d03bdbfca1",
+        "parentUid" : "f27de9a3560457698581877ccbc12f30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037558,
+          "stop" : 1718090037601,
+          "duration" : 43
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入的id无对应的血糖记录的情况",
+        "uid" : "354ff79b164a3704",
+        "parentUid" : "f27de9a3560457698581877ccbc12f30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037604,
+          "stop" : 1718090037662,
+          "duration" : 58
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试输入的id有对应的血糖记录的情况",
+        "uid" : "95efd44a1e5455ea",
+        "parentUid" : "f27de9a3560457698581877ccbc12f30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718090037665,
+          "stop" : 1718090037766,
+          "duration" : 101
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f27de9a3560457698581877ccbc12f30"
+    } ],
+    "uid" : "d390083943016589c1c1759c3f5f4d2e"
+  } ]
+}

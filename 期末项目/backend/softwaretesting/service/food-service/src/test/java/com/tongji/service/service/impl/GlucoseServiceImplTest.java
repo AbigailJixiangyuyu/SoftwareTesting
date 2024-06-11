@@ -39,15 +39,31 @@ class GlucoseServiceImplTest {
     @Description("返回时间范围不能为空的提示消息")
     void getGlucose1() {
         StpUtil.login(1);
-        ResponseResult result =glucoseService.getGlucose(null);
+        TimeRangeDTO timeRangeDTO = new TimeRangeDTO();
+        timeRangeDTO.setStartTime(null);
+        timeRangeDTO.setEndTime(null);
+        ResponseResult result =glucoseService.getGlucose(timeRangeDTO);
         assertEquals("时间范围不能为空", result.getMessage());
+    }
+
+    @Test
+    @Story("血糖信息查找")
+    @DisplayName("测试时间范围不合法的情况")
+    @Description("返回时间范围不合法的提示消息")
+    void getGlucose2() {
+        StpUtil.login(1);
+        TimeRangeDTO timeRangeDTO = new TimeRangeDTO();
+        timeRangeDTO.setEndTime(LocalDateTime.of(2021, 7, 30, 16, 0, 0));
+        timeRangeDTO.setStartTime(LocalDateTime.of(2021, 7, 30, 17, 0, 0));
+        ResponseResult result =glucoseService.getGlucose(timeRangeDTO);
+        assertEquals("终止时间不能早于起始时间", result.getMessage());
     }
 
     @Test
     @Story("血糖信息查找")
     @DisplayName("测试输入时间范围内无血糖记录的情况")
     @Description("返回空列表")
-    void getGlucose2() {
+    void getGlucose3() {
         StpUtil.login(1);
         TimeRangeDTO timeRangeDTO=new TimeRangeDTO();
         timeRangeDTO.setStartTime(LocalDateTime.of(2019, 12, 20, 0, 0, 0));
@@ -62,7 +78,7 @@ class GlucoseServiceImplTest {
     @Story("血糖信息查找")
     @DisplayName("测试输入时间范围内有血糖记录的情况")
     @Description("返回正确的血糖值列表")
-    void getGlucose3() {
+    void getGlucose4() {
         StpUtil.login(1);
         TimeRangeDTO timeRangeDTO=new TimeRangeDTO();
         timeRangeDTO.setStartTime(LocalDateTime.of(2021, 7, 30, 16, 0, 0));

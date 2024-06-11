@@ -1,0 +1,131 @@
+[ {
+  "uid" : "7b173a404413056f",
+  "name" : "测试时间范围为空的情况",
+  "time" : {
+    "start" : 1718089495689,
+    "stop" : 1718089495733,
+    "duration" : 44
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f0a3f811d60f045a",
+  "name" : "测试输入的id无对应的血糖记录的情况",
+  "time" : {
+    "start" : 1718089495993,
+    "stop" : 1718089496068,
+    "duration" : 75
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6d5ef74743c9dd23",
+  "name" : "测试输入时间范围内无血糖记录的情况",
+  "time" : {
+    "start" : 1718089495815,
+    "stop" : 1718089495874,
+    "duration" : 59
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c9fe400bce249ffa",
+  "name" : "测试输入的id参数无对应的血糖记录的情况",
+  "time" : {
+    "start" : 1718089495206,
+    "stop" : 1718089495508,
+    "duration" : 302
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8e9aba1633c852f",
+  "name" : "测试输入的id参数有对应的血糖记录且gluValue和time中至少一个为空的情况",
+  "time" : {
+    "start" : 1718089495512,
+    "stop" : 1718089495600,
+    "duration" : 88
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ef00dea9d6ef3a4c",
+  "name" : "测试输入的gluValue和time均不为空的情况",
+  "time" : {
+    "start" : 1718089494750,
+    "stop" : 1718089495156,
+    "duration" : 406
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2b0bd4389f950386",
+  "name" : "测试输入的id参数为空的情况",
+  "time" : {
+    "start" : 1718089495161,
+    "stop" : 1718089495202,
+    "duration" : 41
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "855a532290672272",
+  "name" : "测试输入的id参数为空的情况",
+  "time" : {
+    "start" : 1718089495947,
+    "stop" : 1718089495989,
+    "duration" : 42
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d5e3d64b98b95c26",
+  "name" : "测试输入的gluValue或time为空的情况",
+  "time" : {
+    "start" : 1718089493879,
+    "stop" : 1718089494736,
+    "duration" : 857
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "df237b60d2048d6f",
+  "name" : "测试时间范围不合法的情况",
+  "time" : {
+    "start" : 1718089495737,
+    "stop" : 1718089495807,
+    "duration" : 70
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "27bb5428bba35c1e",
+  "name" : "测试输入的id参数有对应的血糖记录且gluValue和time均不为空的情况",
+  "time" : {
+    "start" : 1718089495603,
+    "stop" : 1718089495685,
+    "duration" : 82
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2825b2f7727e032f",
+  "name" : "测试输入时间范围内有血糖记录的情况",
+  "time" : {
+    "start" : 1718089495878,
+    "stop" : 1718089495943,
+    "duration" : 65
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d9ff39b525eace40",
+  "name" : "测试输入的id有对应的血糖记录的情况",
+  "time" : {
+    "start" : 1718089496071,
+    "stop" : 1718089496163,
+    "duration" : 92
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

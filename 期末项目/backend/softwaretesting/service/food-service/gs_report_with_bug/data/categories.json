@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected: <终止时间不能早于起始时间> but was: <操作成功>",
+      "children" : [ {
+        "name" : "测试时间范围不合法的情况",
+        "uid" : "df237b60d2048d6f",
+        "parentUid" : "799e36572d68b7228d72d2185f6d73fe",
+        "status" : "failed",
+        "time" : {
+          "start" : 1718089495737,
+          "stop" : 1718089495807,
+          "duration" : 70
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "799e36572d68b7228d72d2185f6d73fe"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

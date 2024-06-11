@@ -1,0 +1,15 @@
+{
+  "total" : 1,
+  "items" : [ {
+    "uid" : "38e51f68d4a7cf17ed5a854a0804d819",
+    "name" : "com.tongji.service.service.impl.GlucoseServiceImplTest",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 12,
+      "unknown" : 0,
+      "total" : 13
+    }
+  } ]
+}
