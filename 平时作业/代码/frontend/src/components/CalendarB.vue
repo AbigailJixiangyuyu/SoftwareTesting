@@ -1,6 +1,6 @@
 <template>
     <div>
-        <text>NotFound</text>
+
     </div>
 </template>
 
@@ -10,6 +10,6 @@
     }
 </script>
 
-<style lang="ts" scoped>
+<style lang="scss" scoped>
 
 </style>

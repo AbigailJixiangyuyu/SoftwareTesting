@@ -1,11 +1,30 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-
+import ComputerSales from '../components/ComputerSales.vue';
+import ChargeSystem from'../components/ChargeSystem.vue';
+import SalesSystem from'../components/SalesSystem.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children: [
+      {
+        path: 'computer_sales',
+        name: 'Computer_sales',
+        component: ComputerSales
+      },
+      {
+        path: 'charge_system',
+        name: 'Charge_system',
+        component: ChargeSystem
+      },
+      {
+        path: 'sales_system',
+        name: 'Sales_system',
+        component: SalesSystem
+      },
+    ]
   },
   {
     path:"",

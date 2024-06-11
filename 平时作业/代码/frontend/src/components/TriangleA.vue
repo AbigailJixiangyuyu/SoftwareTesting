@@ -1,15 +1,15 @@
 <template>
     <div>
-        <text>NotFound</text>
+        <h>Triangle</h>
     </div>
 </template>
 
-<script>
+<script lang="ts">
     export default {
         
     }
 </script>
 
-<style lang="ts" scoped>
+<style  scoped>
 
 </style>
