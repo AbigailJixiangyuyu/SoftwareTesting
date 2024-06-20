@@ -34,11 +34,6 @@ def dealFile(file):
 
 
 def convert_datetime_in_dict(data):
-    # for i in range(len(data)):
-    #     # data[i] = convert_datetime_in_data(data[i])
-    #     for key, value in data[i].items():
-    #         if isinstance(value, datetime.datetime):
-    #             data[key] = value.strftime("%Y-%m-%d %H:%M:%S")
     for item in data:
         # 遍历字典中的每个键和值
         for key, value in item.items():
