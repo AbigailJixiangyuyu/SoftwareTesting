@@ -20,8 +20,8 @@
             <span>判断三角形类型</span>
           </template>
           <!-- 二级导航1 -->
-          <el-menu-item index="/home/triangleA">边界值法</el-menu-item>
-          <el-menu-item index="/home/triangleB">等价类法</el-menu-item>
+          <el-menu-item index="/home/triangle_system/boundary">边界值法</el-menu-item>
+          <el-menu-item index="/home/triangle_system/equivalence">等价类法</el-menu-item>
         </el-sub-menu>
 
         <!-- 一级导航2 -->
@@ -30,8 +30,9 @@
             <span>万年历问题</span>
           </template>
           <!-- 二级导航2 -->
-          <el-menu-item index="/home/calendarA">边界值法</el-menu-item>
-          <el-menu-item index="/home/calendarB">等价类法、决策表法</el-menu-item>
+          <el-menu-item index="/home/calendar_system/equivalence">边界值法</el-menu-item>
+          <el-menu-item index="/home/calendar_system/boundary">等价类法</el-menu-item>
+          <el-menu-item index="/home/calendar_system/decision">决策表法</el-menu-item>
         </el-sub-menu>
 
         <!-- 一级导航3 -->
@@ -87,11 +88,7 @@ export default{
     ElMenuItem
   },
   methods: {
-    /* handleSelect(key, keyPath) {
-      if (key === '3-1') {
-        this.$router.push('/home/computer_sales')
-      }
-    } */
+    
   }
 };
 </script>
