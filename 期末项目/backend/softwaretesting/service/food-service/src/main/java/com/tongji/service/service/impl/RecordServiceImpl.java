@@ -190,7 +190,9 @@ public class RecordServiceImpl extends ServiceImpl<RecordMapper, Record> impleme
 
     @Override
     public ResponseResult segrec(SegRecDTO segRecDTO) {
-
+        if (segRecDTO.getNum() < 0) {
+            throw new RuntimeException("识别图片中食物数不可为负");
+        }
         RestTemplate restTemplate = new RestTemplate();
         String url = "https://ericwvi.site/bgmp/api/diet?Action=SegRec";
 
