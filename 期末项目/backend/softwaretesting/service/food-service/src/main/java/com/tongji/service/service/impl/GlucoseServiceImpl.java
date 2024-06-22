@@ -34,6 +34,7 @@ public class GlucoseServiceImpl extends ServiceImpl<GlucoseMapper, Glucose> impl
         if (timeRangeDTO.getStartTime().isAfter(timeRangeDTO.getEndTime())) {
             return ResponseResult.errorResult(400, "终止时间不能早于起始时间");
         }
+        StpUtil.login(1);
         Long id = StpUtil.getLoginIdAsLong();
         List<Glucose> glucoseList = this.list(
                 Wrappers.<Glucose>lambdaQuery().eq(Glucose::getUserId, id).
