@@ -84,6 +84,9 @@ public class GlucoseServiceImpl extends ServiceImpl<GlucoseMapper, Glucose> impl
         if (glucoseAddDTO.getGluValue() == null || glucoseAddDTO.getTime() == null) {
             return ResponseResult.errorResult(400, "血糖值和时间不能为空");
         }
+        if (glucoseAddDTO.getGluValue().doubleValue() < 0) {
+            return ResponseResult.errorResult(400, "血糖值不能为负数");
+        }
         Long userId = StpUtil.getLoginIdAsLong();
         Glucose glucose = new Glucose();
         glucose.setId(null);
