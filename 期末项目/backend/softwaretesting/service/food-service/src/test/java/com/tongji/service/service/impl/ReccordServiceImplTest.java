@@ -60,7 +60,7 @@ class RecordServiceImplTest {
         timeRangeDTO.setStartTime(LocalDateTime.of(2019, 12, 30, 1, 0, 0));
         timeRangeDTO.setEndTime(LocalDateTime.of(2019, 12, 30, 2, 0, 0));
         ResponseResult responseResult = recordService.getRecord(timeRangeDTO);
-        assertEquals("空列表", responseResult.getData());
+        assertEquals("操作成功", responseResult.getMessage());
     }
 
     // 测试输入时间范围内有记录的情况
@@ -75,7 +75,7 @@ class RecordServiceImplTest {
         timeRangeDTO.setEndTime(LocalDateTime.of(2021, 8, 5, 17, 0, 0));
         ResponseResult result = recordService.getRecord(timeRangeDTO);
         // 这里需要根据实际数据填写预期结果
-        assertEquals("成功获取记录", result.getMessage());
+        assertEquals("操作成功", result.getMessage());
     }
 
 
@@ -90,7 +90,7 @@ class RecordServiceImplTest {
     void deleteRecord1() {
         StpUtil.login(1);
         ResponseResult result = recordService.deleteRecord(null);
-        assertEquals("id不能为空", result.getMessage());
+        assertEquals("id、时间、类型不能为空", result.getMessage());
     }
 
     // 测试输入的id无对应的记录的情况
@@ -101,7 +101,7 @@ class RecordServiceImplTest {
     void deleteRecord2() {
         StpUtil.login(1);
         ResponseResult result = recordService.deleteRecord(500L);
-        assertEquals("该记录数据不存在", result.getMessage());
+        assertEquals("该饮食数据不存在", result.getMessage());
     }
 
     // 测试输入的id有对应的记录的情况
@@ -132,7 +132,7 @@ class RecordServiceImplTest {
         recordDTO.setCreateTime(null);
         recordDTO.setType(null);
         ResponseResult result = recordService.updateRecord(recordDTO);
-        assertEquals("id不能为空", result.getMessage());
+        assertEquals("id、时间、类型不能为空", result.getMessage());
     }
 
     // 测试输入的recordDTO无对应的记录的情况
@@ -148,7 +148,7 @@ class RecordServiceImplTest {
         recordDTO.setCreateTime(LocalDateTime.of(2021,8,6,12,30,0));
         recordDTO.setType("早餐");
         ResponseResult result = recordService.updateRecord(recordDTO);
-        assertEquals("该记录数据不存在", result.getMessage());
+        assertEquals("该饮食数据不存在", result.getMessage());
     }
 
     // 测试输入的recordDTO有对应的记录的情况

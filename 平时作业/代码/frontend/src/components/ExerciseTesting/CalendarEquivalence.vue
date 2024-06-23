@@ -1,9 +1,9 @@
 <template>
-    <div class="computer_sales">
+    <div class="calendar_css">
       <p class="question">
         万年历问题（等价类方法分别分析和设计测试用例）。
       </p>
-      <div>
+      <div style="display: flex; align-items: center;">
         <!-- 文件上传组件 -->
         <el-upload
           action="http://47.116.193.81:25690/test/calendar"
@@ -21,6 +21,7 @@
           <div class="el-upload__tip">只能上传excel文件</div>
         </el-upload>
         <el-button v-if="fileUrl" @click="handleFileClick">Download</el-button>
+        <div  v-show="showChart" id="pieChart" style="width: 400px; height: 200px; margin-left: 20px;"></div>
       </div>
       
       <!-- 表格组件 -->
@@ -43,7 +44,7 @@
   import { ElUpload, ElButton, ElTable, ElTableColumn, ElMessage } from 'element-plus';
   import 'element-plus/dist/index.css';
   import axios from 'axios';
-  
+  import * as echarts from 'echarts'
   interface TableData {
     id: string;
     year: number;
@@ -58,6 +59,8 @@
   const tableData = ref<TableData[]>([]);
   const fileList = ref<any[]>([]);
   const fileUrl = ref<string | null>(null);
+    const successRate = ref<number>(0);  
+  const showChart = ref<boolean>(false);
   const beforeUpload = (file: any) => {
     const isExcel = file.type === 'application/vnd.ms-excel' || file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
     if (!isExcel) {
@@ -71,6 +74,9 @@
     if (response ) {
       tableData.value = response.result as TableData[];
       fileUrl.value=response.file;
+      successRate.value = response.rate;
+      showChart.value = tableData.value.length > 0;
+      updateChart();
     } else {
       ElMessage.error('文件处理失败');
     }
@@ -92,12 +98,50 @@
     tableData.value = [];
     fileUrl.value = null;
     fileList.value =[];
+    showChart.value = false;
+  };
+  const updateChart = () => {
+    const chartDom = document.getElementById('pieChart')!;
+    const myChart = echarts.init(chartDom);
+    const failureRate = 1 - successRate.value;
+    const option = {
+      title: {
+        text: '测试用例结果',
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left'
+      },
+      series: [
+        {
+          name: '测试结果',
+          type: 'pie',
+          radius: '50%',
+          data: [
+            { value: successRate.value, name: '通过', itemStyle: { color: 'green' }  },
+            { value: failureRate, name: '失败', itemStyle: { color: 'red' } }
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ]
+    };
+    option && myChart.setOption(option);
   };
   </script>
   
   <style scoped>
-  .computer_sales {
-    width: 85%;
+  .calendar_css {
+    width: 70%;
   }
   </style>
   

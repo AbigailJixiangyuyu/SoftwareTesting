@@ -30,8 +30,8 @@
             <span>万年历问题</span>
           </template>
           <!-- 二级导航2 -->
-          <el-menu-item index="/home/calendar_system/equivalence">边界值法</el-menu-item>
-          <el-menu-item index="/home/calendar_system/boundary">等价类法</el-menu-item>
+          <el-menu-item index="/home/calendar_system/equivalence">等价类法</el-menu-item>
+          <el-menu-item index="/home/calendar_system/boundary">边界值法</el-menu-item>
           <el-menu-item index="/home/calendar_system/decision">决策表法</el-menu-item>
         </el-sub-menu>
 
@@ -144,8 +144,15 @@ export default{
   top: 8%;
   left: 0;
   width: 220px;
-  min-height: 100%;
+  min-height: 92%;
+  max-height: 80vh;
   position:fixed;
+  overflow-y: auto;
+}
+.el-menu-vertical-demo::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent; /* 使滚动条透明 */
 }
 .content{
   margin-top:0px;

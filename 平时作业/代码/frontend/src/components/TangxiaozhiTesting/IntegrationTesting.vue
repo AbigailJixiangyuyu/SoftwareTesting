@@ -1,40 +1,16 @@
 <template>
-    <div class="computer_sales">
+    <div class="testing">
       <p class="question">
-        集成测试
+        集成测试说明：为了程序能够正确集成，针对程序进行集成测试任务，确保当单独开发的多个模块或组件组合在一起时，它们能够正确地协同工作。关注于模块间的接口，包括数据传递和函数调用的正确性，帮助发现单元测试中可能遗漏的问题，如接口不匹配或逻辑错误。本测试计划主要是针对软件的集成测试:不含硬件、系统测试以及单元测试（完成单元测试是前提）。 主要测试方法是黑盒测试方法。必要的集成测试是回归测试。
       </p>
-      <div>
-        <!-- 文件上传组件 -->
-        <el-upload
-          action="http://47.116.193.81:25690/test/calendar"
-          multiple
+      <div style="display: flex; align-items: center;">
+        <!-- 开始测试组件 -->
+        
+          <el-button type="success" @click="startIntegrationTest"  :loading="loading">开始集成测试</el-button>
           
-          :on-success="handleSuccess"
-          :on-remove="handleRemove"
-          :file-list="fileList"
-          :limit="10"
-          :before-upload="beforeUpload"
-          accept=".xlsx, .xls"
-          :data="uploadData"
-        >
-          <el-button type="success">上传测试用例</el-button>
-          <div class="el-upload__tip">只能上传excel文件</div>
-        </el-upload>
-        <el-button v-if="fileUrl" @click="handleFileClick">Download</el-button>
       </div>
       
-      <!-- 表格组件 -->
-      <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="id" label="用例编号" width="100"></el-table-column>
-        <el-table-column prop="year" label="年" width="100"></el-table-column>
-        <el-table-column prop="month" label="月" width="100"></el-table-column>
-        <el-table-column prop="day" label="日" width="100"></el-table-column>
-        
-        <el-table-column prop="expect" label="预期结果" width="120"></el-table-column>
-        <el-table-column prop="real" label="实际结果" width="120"></el-table-column>
-        <el-table-column prop="result" label="是否通过" width="120"></el-table-column>
-        <el-table-column prop="comment" label="用例备注" width="200"></el-table-column>
-      </el-table>
+      <el-button v-if="reportUrl" @click="viewReport">前往查看报告</el-button>
     </div>
   </template>
   
@@ -43,61 +19,37 @@
   import { ElUpload, ElButton, ElTable, ElTableColumn, ElMessage } from 'element-plus';
   import 'element-plus/dist/index.css';
   import axios from 'axios';
+  import { get } from "../../axios/axiosConfig.js";
   
-  interface TableData {
-    id: string;
-    year: number;
-    month: number;
-    day: number;
-    expect: string;
-    real: string;
-    result: string;
-    comment: string;
+  const loading = ref(false);
+  const reportUrl = ref<string | null>(null);
+
+  const startIntegrationTest = async () => {
+    loading.value = true;
+  try {
+    const response = await get('/testurl/int');
+    console.log('Response data:', response.data);
+    reportUrl.value = response.data;
+    ElMessage.success('集成测试成功');
+  } catch (error) {
+    console.error('Error during integration test:', error);
+    ElMessage.error('集成测试失败');
+  }finally {
+    loading.value = false;
   }
-  
-  const tableData = ref<TableData[]>([]);
-  const fileList = ref<any[]>([]);
-  const fileUrl = ref<string | null>(null);
-  const beforeUpload = (file: any) => {
-    const isExcel = file.type === 'application/vnd.ms-excel' || file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-    if (!isExcel) {
-      ElMessage.error('只能上传excel文件');
-    }
-    return isExcel;
-  };
-  
-  const handleSuccess = (response: any, file: any) => {
-    console.log('Response:', response);  // 添加调试日志
-    if (response ) {
-      tableData.value = response.result as TableData[];
-      fileUrl.value=response.file;
-    } else {
-      ElMessage.error('文件处理失败');
-    }
-  };
-  
-  const handleFileClick = () => {
-    if (fileUrl.value) {
-      window.open(fileUrl.value, '_blank');
-    } else {
-      ElMessage.error('文件URL无效');
-    }
-  };
-  const uploadData = (file: any) => {
-    const formData = new FormData();
-    formData.append('file', file.raw);
-    return formData;
-  };
-  const handleRemove = () => {
-    tableData.value = [];
-    fileUrl.value = null;
-    fileList.value =[];
-  };
+};
+const viewReport = () => {
+  if (reportUrl.value) {
+    window.open(reportUrl.value, '_blank');
+  } else {
+    ElMessage.error('报告URL无效');
+  }
+};
   </script>
   
   <style scoped>
-  .computer_sales {
-    width: 85%;
+  .testing {
+    width: 70%;
   }
   </style>
   

@@ -1,40 +1,16 @@
 <template>
-    <div class="computer_sales">
+    <div class="testing">
       <p class="question">
-        系统测试
+        系统测试说明：系统测试的主要目的是验证整个糖尿病饮食管理与营养评估系统是否满足设计要求，并在实际使用环境中能够稳定、可靠地运行。以类为单元，采用独立的单元测试策略，通过设计相应的驱动来测试类中的方法。再选择类的被测方法中，根据方法的规模和复杂度进行判定。非空非注释代码代码行LOC>20，或者复杂度VG>3的方法进行单元测试，其他方法不进行单元测试。
       </p>
-      <div>
-        <!-- 文件上传组件 -->
-        <el-upload
-          action="http://47.116.193.81:25690/test/calendar"
-          multiple
-          
-          :on-success="handleSuccess"
-          :on-remove="handleRemove"
-          :file-list="fileList"
-          :limit="10"
-          :before-upload="beforeUpload"
-          accept=".xlsx, .xls"
-          :data="uploadData"
-        >
-          <el-button type="success">上传测试用例</el-button>
-          <div class="el-upload__tip">只能上传excel文件</div>
-        </el-upload>
-        <el-button v-if="fileUrl" @click="handleFileClick">Download</el-button>
+      <div style="display: flex; align-items: center;">
+        <!-- 开始测试组件 -->
+        
+        <el-button type="success">开始系统测试</el-button>
+         
       </div>
       
-      <!-- 表格组件 -->
-      <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="id" label="用例编号" width="100"></el-table-column>
-        <el-table-column prop="year" label="年" width="100"></el-table-column>
-        <el-table-column prop="month" label="月" width="100"></el-table-column>
-        <el-table-column prop="day" label="日" width="100"></el-table-column>
-        
-        <el-table-column prop="expect" label="预期结果" width="120"></el-table-column>
-        <el-table-column prop="real" label="实际结果" width="120"></el-table-column>
-        <el-table-column prop="result" label="是否通过" width="120"></el-table-column>
-        <el-table-column prop="comment" label="用例备注" width="200"></el-table-column>
-      </el-table>
+      
     </div>
   </template>
   
@@ -44,60 +20,12 @@
   import 'element-plus/dist/index.css';
   import axios from 'axios';
   
-  interface TableData {
-    id: string;
-    year: number;
-    month: number;
-    day: number;
-    expect: string;
-    real: string;
-    result: string;
-    comment: string;
-  }
   
-  const tableData = ref<TableData[]>([]);
-  const fileList = ref<any[]>([]);
-  const fileUrl = ref<string | null>(null);
-  const beforeUpload = (file: any) => {
-    const isExcel = file.type === 'application/vnd.ms-excel' || file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-    if (!isExcel) {
-      ElMessage.error('只能上传excel文件');
-    }
-    return isExcel;
-  };
-  
-  const handleSuccess = (response: any, file: any) => {
-    console.log('Response:', response);  // 添加调试日志
-    if (response ) {
-      tableData.value = response.result as TableData[];
-      fileUrl.value=response.file;
-    } else {
-      ElMessage.error('文件处理失败');
-    }
-  };
-  
-  const handleFileClick = () => {
-    if (fileUrl.value) {
-      window.open(fileUrl.value, '_blank');
-    } else {
-      ElMessage.error('文件URL无效');
-    }
-  };
-  const uploadData = (file: any) => {
-    const formData = new FormData();
-    formData.append('file', file.raw);
-    return formData;
-  };
-  const handleRemove = () => {
-    tableData.value = [];
-    fileUrl.value = null;
-    fileList.value =[];
-  };
   </script>
   
   <style scoped>
-  .computer_sales {
-    width: 85%;
+  .testing {
+    width: 70%;
   }
   </style>
   
