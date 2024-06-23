@@ -44,14 +44,14 @@ def convert_datetime_in_dict(data):
     return data
 
 
-def dealResponse(df, file_path):
+def dealResponse(df, file_path, rate):
     # 将结果写入文件
     DataFrame(df).to_excel(file_path, sheet_name='Sheet1', index=False, header=True)
     # 将结果以json形式返回给前端
     dic = df.to_dict(orient='records')
     convert_datetime_in_dict(dic)
     file_path = 'http://47.116.193.81:25690/static/' + os.path.basename(file_path)
-    my_dict = {'file': file_path, 'result': dic}
+    my_dict = {'file': file_path, 'rate': rate, 'result': dic}
     result = json.dumps(my_dict)
     response = make_response(result)
     response.headers["Content-Type"] = "application/json"
@@ -63,6 +63,8 @@ def dealResponse(df, file_path):
 @cross_origin()
 def charge():
     df, file_path = dealFile(request.files['file'])
+    total = 0
+    right = 0
     for i in range(df.shape[0]):
         # 调用被测试的方法，获取实际输出
         tele_charge = TelecomCharge(df.loc[i, 'minute'], df.loc[i, 'times'])
@@ -72,8 +74,10 @@ def charge():
             result = "未通过测试"
         else:
             result = "通过测试"
+            right += 1
+        total += 1
         df.loc[i, 'result'] = result
-    return dealResponse(df, file_path)
+    return dealResponse(df, file_path, right / total)
 
 
 # 用来销售系统问题的api
@@ -81,6 +85,8 @@ def charge():
 @cross_origin()
 def sale_system():
     df, file_path = dealFile(request.files['file'])
+    total = 0
+    right = 0
     for i in range(df.shape[0]):
         # 调用被测试的方法，获取实际输出
         sale_system = SaleSystem(df.loc[i, 'sales'], df.loc[i, 'account'], df.loc[i, 'day'])
@@ -90,8 +96,10 @@ def sale_system():
             result = "未通过测试"
         else:
             result = "通过测试"
+            right += 1
+        total += 1
         df.loc[i, 'result'] = result
-    return dealResponse(df, file_path)
+    return dealResponse(df, file_path, right / total)
 
 
 # 处理电脑销售系统的api
@@ -99,16 +107,20 @@ def sale_system():
 @cross_origin()
 def commission():
     df, file_path = dealFile(request.files['file'])
+    total = 0
+    right = 0
     for i in range(df.shape[0]):
         computer_sales_system = ComputerSalesSystem(df.loc[i, 'mainframes'], df.loc[i, 'monitors'], df.loc[i, 'peripherals'])
         real = computer_sales_system.compute_commission()
         df.loc[i, 'real'] = real
         if df.loc[i, 'real'] == df.loc[i, 'expect']:
             result = "通过测试"
+            right += 1
         else:
             result = "未通过测试"
+        total += 1
         df.loc[i, 'result'] = result
-    return dealResponse(df, file_path)
+    return dealResponse(df, file_path, right / total)
 
 
 # 处理三角形的api
@@ -116,16 +128,20 @@ def commission():
 @cross_origin()
 def trianglefn():
     df, file_path = dealFile(request.files['file'])
+    total = 0
+    right = 0
     for i in range(df.shape[0]):
         triangle = Triangle(df.loc[i, 'a'], df.loc[i, 'b'], df.loc[i, 'c'])
         real = triangle.compute_triangle()
         df.loc[i, 'real'] = real
         if df.loc[i, 'real'] == df.loc[i, 'expect']:
             result = "通过测试"
+            right += 1
         else:
             result = "未通过测试"
+        total += 1
         df.loc[i, 'result'] = result
-    return dealResponse(df, file_path)
+    return dealResponse(df, file_path, right / total)
 
 
 # 处理日历的api
@@ -133,16 +149,20 @@ def trianglefn():
 @cross_origin()
 def calendarfn():
     df, file_path = dealFile(request.files['file'])
+    total = 0
+    right = 0
     for i in range(df.shape[0]):
         calendar = Calendar(df.loc[i, 'year'], df.loc[i, 'month'], df.loc[i, 'day'])
         real = calendar.compute_next_day()
         df.loc[i, 'real'] = real
         if df.loc[i, 'real'] == df.loc[i, 'expect']:
             result = "通过测试"
+            right += 1
         else:
             result = "未通过测试"
+        total += 1
         df.loc[i, 'result'] = result
-    return dealResponse(df, file_path)
+    return dealResponse(df, file_path, right / total)
 
 
 @app.route('/ping')
