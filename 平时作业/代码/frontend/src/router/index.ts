@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ComputerSales from '../components/ComputerSales.vue';
-import ChargeSystem from'../components/ChargeSystem.vue';
-import SalesSystem from'../components/SalesSystem.vue';
-import TriangleBoundary from'../components/TriangleBoundary.vue';
-import TriangleEquivalence from'../components/TriangleEquivalence.vue';
-import CalendarBoundary from'../components/CalendarBoundary.vue';
-import CalendarEquivalence from'../components/CalendarEquivalence.vue';
-import CalendarDecision from'../components/CalendarDecision.vue';
+import ComputerSales from '../components/ExerciseTesting/ComputerSales.vue';
+import ChargeSystem from'../components/ExerciseTesting/ChargeSystem.vue';
+import SalesSystem from'../components/ExerciseTesting/SalesSystem.vue';
+import TriangleBoundary from'../components/ExerciseTesting/TriangleBoundary.vue';
+import TriangleEquivalence from'../components/ExerciseTesting/TriangleEquivalence.vue';
+import CalendarBoundary from'../components/ExerciseTesting/CalendarBoundary.vue';
+import CalendarEquivalence from'../components/ExerciseTesting/CalendarEquivalence.vue';
+import CalendarDecision from'../components/ExerciseTesting/CalendarDecision.vue';
+
+import UnitTesting from'../components/TangxiaozhiTesting/UnitTesting.vue';
+import IntegrationTesting from'../components/TangxiaozhiTesting/IntegrationTesting.vue';
+import SystemTesting from'../components/TangxiaozhiTesting/SystemTesting.vue';
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
@@ -61,6 +66,24 @@ const routes: Array<RouteRecordRaw> = [
         path: 'calendar_system/decision',
         name: 'Calendar_system_decision',
         component: CalendarDecision
+      },
+      {
+        //单元测试
+        path: 'tangxiaozhi_testing/unit_testing',
+        name: 'Tangxiaozhi_unit_testing',
+        component: UnitTesting
+      },
+      {
+        //集成测试
+        path: 'tangxiaozhi_testing/integration_testing',
+        name: 'Tangxiaozhi_integration_testing',
+        component: IntegrationTesting
+      },
+      {
+        //系统测试
+        path: 'tangxiaozhi_testing/system_testing',
+        name: 'Tangxiaozhi_system_testing',
+        component: SystemTesting
       },
     ]
   },

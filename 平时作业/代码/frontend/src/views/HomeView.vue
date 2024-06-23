@@ -3,7 +3,7 @@
     <!-- 侧边栏，包括标题和导航栏 -->
     <div class="sidebar">
       <div class="sidebar-header">
-        <h1>软件测试练习题</h1>
+        <h1>软件测试平台</h1>
       </div>
       <!-- 侧边菜单 -->
       <el-menu
@@ -61,6 +61,19 @@
           <!-- 二级导航5 -->
           <el-menu-item index="/home/sales_system">白盒测试</el-menu-item>
         </el-sub-menu>
+
+        <!-- 一级导航6 -->
+        <el-sub-menu index="6">
+          <template #title>
+            <span>糖小智项目测试</span>
+          </template>
+          <!-- 二级导航6 -->
+          <el-menu-item index="/home/tangxiaozhi_testing/unit_testing">单元测试</el-menu-item>
+          <el-menu-item index="/home/tangxiaozhi_testing/integration_testing">集成测试</el-menu-item>
+          <el-menu-item index="/home/tangxiaozhi_testing/system_testing">系统测试</el-menu-item>
+          
+        </el-sub-menu>
+
       </el-menu>
     </div>
 
