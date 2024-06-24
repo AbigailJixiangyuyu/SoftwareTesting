@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GlucoseServiceImplTest {
 
     @Autowired
-    GlucoseServiceImpl glucoseService;
+    private GlucoseServiceImpl glucoseService;
 
     @Test
     @Story("血糖信息查找")
