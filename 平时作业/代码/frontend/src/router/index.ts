@@ -1,10 +1,15 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ComputerSales from '../components/ExerciseTesting/ComputerSales.vue';
+
 import ChargeSystem from'../components/ExerciseTesting/ChargeSystem.vue';
+
+
 import SalesSystem from'../components/ExerciseTesting/SalesSystem.vue';
+
 import TriangleBoundary from'../components/ExerciseTesting/TriangleBoundary.vue';
 import TriangleEquivalence from'../components/ExerciseTesting/TriangleEquivalence.vue';
+
 import CalendarBoundary from'../components/ExerciseTesting/CalendarBoundary.vue';
 import CalendarEquivalence from'../components/ExerciseTesting/CalendarEquivalence.vue';
 import CalendarDecision from'../components/ExerciseTesting/CalendarDecision.vue';
@@ -26,9 +31,27 @@ const routes: Array<RouteRecordRaw> = [
         component: ComputerSales
       },
       {
-        //收费
-        path: 'charge_system',
-        name: 'Charge_system',
+        //收费边界值
+        path: 'charge_system/boundary',
+        name: 'Charge_system_boundary',
+        component: ChargeSystem
+      },
+      {
+        //收费等价类
+        path: 'charge_system/equivalence',
+        name: 'Charge_system_equivalence',
+        component: ChargeSystem
+      },
+      {
+        //收费决策表
+        path: 'charge_system/decision',
+        name: 'Charge_system_decision',
+        component: ChargeSystem
+      },
+      {
+        //收费综合分析
+        path: 'charge_system/summary',
+        name: 'Charge_system_summary',
         component: ChargeSystem
       },
       {
