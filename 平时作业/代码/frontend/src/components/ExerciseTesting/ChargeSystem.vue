@@ -5,6 +5,9 @@
         实际通话费是否有折扣与当月的通话时间（分钟）和本年度至本月的累计未按时缴费的次数有关。跨年度未交费与折扣无关，但跨年未交部分每月需要交付总额5%的滞纳金。
         当月的通话分钟数和折扣比例及本年度未按时缴费次数之间有直接的对应关系，如果本年度的未按时缴费的次数超过本月通话时间所对应的容许值则免于折扣，并按实际的通话费计算。
       </p>
+      <p class="question">
+      {{ questionText }}
+    </p>
       <div  style="display: flex; align-items: center;">
         <!-- 文件上传组件 -->
         <el-upload
@@ -40,11 +43,12 @@
   </template>
   
   <script lang="ts" setup>
-  import { ref } from 'vue';
+  import { ref, computed } from 'vue';
   import { ElUpload, ElButton, ElTable, ElTableColumn, ElMessage } from 'element-plus';
   import 'element-plus/dist/index.css';
   import axios from 'axios';
-  import * as echarts from 'echarts'
+  import * as echarts from 'echarts';
+  import { useRoute } from 'vue-router';
   interface TableData {
     id: string;
     minute:number;
@@ -54,7 +58,7 @@
     result: string;
     comment: string;
   }
-  
+  const route = useRoute();
   const tableData = ref<TableData[]>([]);
   const fileList = ref<any[]>([]);
   const fileUrl = ref<string | null>(null);
@@ -136,6 +140,17 @@
     };
     option && myChart.setOption(option);
   };
+  const questionText = computed(() => {
+  if (route.path === '/home/charge_system/boundary') {
+    return '使用边界值法分析';
+  } else if (route.path === '/home/charge_system/equivalence') {
+    return '使用等价类法分析';
+  }else if (route.path === '/home/charge_system/decision') {
+    return '使用决策表法分析'; 
+  }else {
+    return '综合分析确定最优解';
+  }
+});
   </script>
   
   <style scoped>

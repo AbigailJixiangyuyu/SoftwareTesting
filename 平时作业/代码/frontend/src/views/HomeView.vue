@@ -50,7 +50,10 @@
             <span>电信收费问题</span>
           </template>
           <!-- 二级导航4 -->
-          <el-menu-item index="/home/charge_system">边界值法</el-menu-item>
+          <el-menu-item index="/home/charge_system/boundary">边界值法</el-menu-item>
+          <el-menu-item index="/home/charge_system/equivalence">等价类法</el-menu-item>
+          <el-menu-item index="/home/charge_system/decision">决策表法</el-menu-item>
+          <el-menu-item index="/home/charge_system/summary">综合分析</el-menu-item>
         </el-sub-menu>
 
         <!-- 一级导航5 -->
@@ -63,17 +66,18 @@
         </el-sub-menu>
 
         <!-- 一级导航6 -->
-        <el-sub-menu index="6">
+
+        <!-- <el-sub-menu index="6">
           <template #title>
             <span>糖小智项目测试</span>
           </template>
-          <!-- 二级导航6 -->
+       
           <el-menu-item index="/home/tangxiaozhi_testing/unit_testing">单元测试</el-menu-item>
           <el-menu-item index="/home/tangxiaozhi_testing/integration_testing">集成测试</el-menu-item>
           <el-menu-item index="/home/tangxiaozhi_testing/system_testing">系统测试</el-menu-item>
           
         </el-sub-menu>
-
+ -->
       </el-menu>
     </div>
 
