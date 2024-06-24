@@ -143,6 +143,6 @@ const updateChart = () => {
 
 <style scoped>
 .computer_sales {
-  width: 70%;
+  width: 100%;
 }
 </style>

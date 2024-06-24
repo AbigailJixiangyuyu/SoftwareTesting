@@ -155,7 +155,7 @@
   
   <style scoped>
   .charge_css {
-    width: 70%;
+    width: 100%;
   }
   </style>
   

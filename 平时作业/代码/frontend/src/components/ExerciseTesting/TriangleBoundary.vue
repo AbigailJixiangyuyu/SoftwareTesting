@@ -147,7 +147,7 @@
   
   <style scoped>
   .triangle_css {
-    width: 70%;
+    width: 100%;
   }
   </style>
   
